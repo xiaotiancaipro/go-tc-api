@@ -24,7 +24,7 @@ func (r ResponseUtil) Unauthorized(c *gin.Context, message string) {
 }
 
 func (r ResponseUtil) BadRequest(c *gin.Context) {
-	r.Build(c, http.StatusBadRequest, "Error: 请求参数解析错误", nil)
+	r.Build(c, http.StatusBadRequest, "Error: Request parameter parsing error", nil)
 }
 
 func (r ResponseUtil) Success(c *gin.Context, message string, data any) {
@@ -36,5 +36,5 @@ func (r ResponseUtil) SuccessNoMessage(c *gin.Context, data any) {
 }
 
 func (r ResponseUtil) Error(c *gin.Context, message string) {
-	r.Build(c, http.StatusInternalServerError, "Error: 内部错误, "+message, nil)
+	r.Build(c, http.StatusInternalServerError, "Error: Internal server error, "+message, nil)
 }
